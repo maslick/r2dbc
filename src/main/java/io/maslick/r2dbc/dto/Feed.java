@@ -2,19 +2,18 @@ package io.maslick.r2dbc.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Data
+@lombok.Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table("datus")
-public class Datus {
+@Table("feeds")
+public class Feed {
 	@Id
 	private Integer id;
-	private String feed;
+	private String name;
 	private Long timestamp;
 }

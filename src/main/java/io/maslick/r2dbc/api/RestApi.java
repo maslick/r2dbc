@@ -1,6 +1,6 @@
 package io.maslick.r2dbc.api;
 
-import io.maslick.r2dbc.dto.Datus;
+import io.maslick.r2dbc.dto.Feed;
 import io.maslick.r2dbc.service.IService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,29 +14,29 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Slf4j
 @RestController
-@RequestMapping(path = "/")
+@RequestMapping(path = "/feeds")
 @RequiredArgsConstructor
 public class RestApi {
 
 	private final IService service;
 
 	@GetMapping(path = "/id/{id}")
-	public Publisher<Datus> getId(@PathVariable Integer id) {
+	public Publisher<Feed> getById(@PathVariable Integer id) {
 		return service.retrieve(id);
 	}
 
-	@GetMapping(path = "/feed/{feed}")
-	public Publisher<Datus> getFeed(@PathVariable String feed) {
-		return service.retrieve(feed);
+	@GetMapping(path = "/name/{name}")
+	public Publisher<Feed> getByName(@PathVariable String name) {
+		return service.retrieve(name);
 	}
 
-	@GetMapping(path = "/feeds")
-	public Publisher<Datus> getAllFeeds() {
+	@GetMapping(path = "/")
+	public Publisher<Feed> getAllFeeds() {
 		return service.retrieveAll();
 	}
 
-	@PostMapping(path = "/post")
-	public Publisher<Datus> post(@RequestBody String feed) {
+	@PostMapping(path = "/new")
+	public Publisher<Feed> post(@RequestBody String feed) {
 		return service.save(feed);
 	}
 }

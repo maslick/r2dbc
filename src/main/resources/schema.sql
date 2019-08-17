@@ -1,5 +1,5 @@
-CREATE TABLE datus (
+CREATE TABLE feeds (
       id           SERIAL PRIMARY KEY,
-      feed         VARCHAR(255),
+      name         VARCHAR(255),
       timestamp    BIGINT
 );

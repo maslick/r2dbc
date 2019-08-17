@@ -23,7 +23,7 @@ Bucket           #     %       Histogram
 
 
 ```bash
-$ echo "POST http://localhost:8080/post" | vegeta attack -body payload.json -rate=100 -duration=5s | tee results.bin | vegeta report
+$ echo "POST http://localhost:8080/feeds/new" | vegeta attack -body payload.json -rate=100 -duration=5s | tee results.bin | vegeta report
   Requests      [total, rate]            500, 100.16
   Duration      [total, attack, wait]    4.998697352s, 4.99187s, 6.827352ms
   Latencies     [mean, 50, 95, 99, max]  8.817106ms, 7.730904ms, 12.161913ms, 38.713621ms, 47.984526ms
