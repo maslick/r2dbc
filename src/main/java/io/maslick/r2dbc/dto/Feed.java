@@ -17,11 +17,11 @@ import javax.persistence.Table;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "datus")
-public class Datus {
+@Table(name = "feeds")
+public class Feed {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String feed;
+	private String name;
 	private Long timestamp;
 }
