@@ -31,7 +31,7 @@ public class FluxishApplicationTests {
 
 	@Before
 	public void before() {
-		repo.deleteAll().subscribe();
+		repo.deleteAll();
 	}
 
 	@Test
