@@ -56,7 +56,7 @@ public class FluxishApplicationTests {
 
 	private ResponseEntity<Feed> add() {
 		String data = "hello";
-		String url = "http://localhost:" + port + "feeds/new";
+		String url = "http://localhost:" + port + "/feeds/new";
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<String> entity = new HttpEntity<>(data, headers);
 		return restTemplate.exchange(url, POST, entity, Feed.class);
